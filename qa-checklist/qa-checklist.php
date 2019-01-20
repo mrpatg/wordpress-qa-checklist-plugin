@@ -10,18 +10,18 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           QA_Checklist
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Plugin Boilerplate
- * Plugin URI:        http://example.com/plugin-name-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin Name:       QA Checklist Plugin for WordPress
+ * Plugin URI:        http://example.com/qa-checklist-uri/
+ * Description:       Provides an easy way to document QA todo items across WordPress pages and posts.
  * Version:           1.0.0
- * Author:            Your Name or Your Company
+ * Author:            Patrick Godbey
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       plugin-name
+ * Text Domain:       qa-checklist
  * Domain Path:       /languages
  */
 
@@ -39,20 +39,20 @@ define( 'QA_CHECKLIST_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/class-qa-checklist-activator.php
  */
 function activate_qa_checklist() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-qa-checklist-activator.php';
+	QA_Checklist_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/class-qa-checklist-deactivator.php
  */
 function deactivate_qa_checklist() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-qa-checklist-deactivator.php';
+	QA_Checklist_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_qa_checklist' );
@@ -62,7 +62,7 @@ register_deactivation_hook( __FILE__, 'deactivate_qa_checklist' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-qa-checklist.php';
 
 /**
  * Begins execution of the plugin.
@@ -75,7 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  */
 function run_qa_checklist() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new QA_Checklist();
 	$plugin->run();
 
 }
